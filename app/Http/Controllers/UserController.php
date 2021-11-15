@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
 
-    public function filter(Request $request){
+    public function nameFilter(Request $request){
         
-        $query= $request->input('query');
+        $query= $request->input('name_query');
 
 
         $users = User::where('name', 'like', '%$query%')
@@ -20,5 +20,16 @@ class UserController extends Controller
 
 
     }
+
+    public function ageFilter(Request $request){
+
+        $query = $request->input('age_query');
+
+        $users = User::where('age', 'like', '%$query%');
+
+        dd($user);
+
+    }
+
 
 }
