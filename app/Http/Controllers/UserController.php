@@ -13,7 +13,6 @@ class UserController extends Controller
 
         $users = User::all();
 
-
     }
 
     
